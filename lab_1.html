@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>IF</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <h2>Демонстрація умовних операторів <strong>IF</strong></h2>
+    <!-- Введення рейтингу -->
+    <label for="mmr">Введіть свій рейтинг:</label>
+    <input type="number" id="mmr" placeholder="Наприклад, 500">
+    <button onclick="checkMmr()">Перевірити</button>
+    <p id="mmrresult"></p>
+    
+    <!-- Введення годин -->
+    <label for="hours">Введіть кількість зіграних годин:</label>
+    <input type="number" id="hours" placeholder="Наприклад, 100-500">
+    <button onclick="checkhours()">Перевірити</button>
+    <p id="hoursresult"></p>
+
+    <script>
+        "use strict";
+        function checkMmr() {
+            let mmr = parseInt(document.getElementById("mmr").value);
+            let result = "";
+            if (mmr > 3000) {
+                result = "Непогано";
+            } else {
+                result = "Слабо";
+            }
+            document.getElementById("mmrresult").innerText = result;
+        }
+
+        function checkhours() {
+            let hours = document.getElementById("hours").value;
+            let result = "";
+            if (hours < 1000) {
+                result = "Мало, йди вчися";
+            } else if (hours > 1001) {
+                result = "Харош";
+            } else {
+                result = "Введи нормально " + hours;
+            }
+            document.getElementById("hoursresult").innerText = result;
+        }
+    </script>
+
+    
+            <a class="home" href="index.html">Повернутися на головну сторінку</a>
+       
+</body>
+</html>

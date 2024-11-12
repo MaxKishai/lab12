@@ -1,0 +1,57 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Гра "Quiz"</title>
+</head>	
+<body>
+    <script> 
+        "use strict";
+        
+        // Questions and answers for the quiz
+        const questions = [
+            { question: "Столиця України?", answer: "Київ" },
+            { question: "Скільки континентів на Землі?", answer: "7" },
+            { question: "Найбільша планета в Сонячній системі?", answer: "Юпітер" }
+        ];
+        
+        let play = confirm("Хочете зіграти в вікторину?"); 
+        let attempts = 0; // Count of attempts
+        let score = 0; // Track score
+
+        if (play) {
+            for (let i = 0; i < questions.length; i++) {
+                let correct = false; // Flag to check if question is answered correctly
+
+                while (!correct) {
+                    let userAnswer = prompt(questions[i].question + " (або натисніть 'Скасувати' для виходу)");
+                    if (userAnswer === null) {
+                        alert("Дякуємо за гру!");
+                        break;
+                    }
+
+                    attempts++;
+                    
+                    if (userAnswer.trim().toLowerCase() === questions[i].answer.toLowerCase()) {
+                        alert("Правильно!");
+                        score++;
+                        correct = true;
+                    } else {
+                        alert("Неправильно, спробуйте ще раз.");
+                    }
+                }
+
+                if (!confirm("Хочете продовжити до наступного питання?")) {
+                    break;
+                }
+            }
+
+            // Final message showing score and attempts
+            alert("Гра завершена. Ваш рахунок: " + score + " з " + questions.length + ". Кількість спроб: " + attempts);
+        } else {
+            alert("Шкода, може іншим разом!");
+        }
+    </script>
+     <a class="home" href="index.html">Повернутися на головну сторінку</a>
+</body>
+</html>

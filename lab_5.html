@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Використання оператора FOR...IN</title>
+</head>	
+<body>
+    <script> 
+        "use strict";		
+        let navigatorInfo = "";
+        
+        // Перебір властивостей об'єкта navigator
+        for (let propertyName in navigator) {
+            navigatorInfo = propertyName + " - " + navigator[propertyName];
+            document.write(navigatorInfo + "<br>");
+        }
+    </script>
+     <a class="home" href="index.html">Повернутися на головну сторінку</a>
+</body>
+</html>

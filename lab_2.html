@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Використання операторів IF та додаткових обчислень</title>
+</head>    
+<body>
+    <script>
+        "use strict";
+        
+        document.write("<p style='text-align:center'>Обчислення для трьох чисел</p>");
+        
+        // Отримуємо значення від користувача
+        let a = parseFloat(prompt("Введіть перше число (a):"));
+        let b = parseFloat(prompt("Введіть друге число (b):"));
+        let c = parseFloat(prompt("Введіть третє число (c):"));
+        
+        // Знаходимо найбільше число
+        if (a > b && a > c) {
+            document.write("Найбільше серед трьох чисел - a = ", a, "<br>");
+        } else if (b > c) {
+            document.write("Найбільше серед трьох чисел - b = ", b, "<br>");
+        } else {
+            document.write("Найбільше серед трьох чисел - c = ", c, "<br>");
+        }
+
+        // Знаходимо найменше число
+        let min;
+        if (a < b && a < c) {
+            min = a;
+        } else if (b < c) {
+            min = b;
+        } else {
+            min = c;
+        }
+        document.write("Найменше серед трьох чисел - ", min, "<br>");
+        
+        // Знаходимо середнє значення
+        let average = (a + b + c) / 3;
+        document.write("Середнє значення трьох чисел - ", average.toFixed(2), "<br>");
+
+        // Використання тернарного оператора для найбільшого значення
+        let max = a > b ? (a > c ? a : c) : (b > c ? b : c);
+        document.write("<p>Найбільше значення серед трьох чисел (за допомогою тернарного оператора) - ", max, "</p>");
+    </script>
+     <a class="home" href="index.html">Повернутися на головну сторінку</a>
+</body>
+</html>

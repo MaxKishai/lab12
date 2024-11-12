@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Використання оператора SWITCH</title>
+</head>	
+<body>
+    <script> 
+        "use strict";
+
+        // Prompt the user to enter their grade
+        let grade = parseInt(prompt("Введіть вашу оцінку (від 1 до 5):")); 
+        let message;
+
+        // Use switch to determine the message based on the grade
+        switch (grade) { 
+            case 1:
+                message = "Потрібно більше зусиль!";
+                break;
+            case 2:
+                message = "Спробуй ще!";
+                break;
+            case 3:
+                message = "Непогано, але можна краще!";
+                break;
+            case 4:
+                message = "Добра робота!";
+                break;
+            case 5:
+                message = "Відмінно, так тримати!";
+                break;
+            default:
+                message = "Неправильна оцінка. Будь ласка, введіть число від 1 до 5.";
+        }
+
+        // Display the message
+        document.write("Ваша оцінка: ", grade, " - ", message);
+    </script>
+     <a class="home" href="index.html">Повернутися на головну сторінку</a>
+</body>
+</html>
